@@ -76,12 +76,6 @@
     newLocation.render(newLocationName);
   }
 
-  var updateLocationData = function(event) {
-    var locationToUpdate = document.getElementById('locationUpdate');
-
-
-  }
-
   var downtown = new DoughnutShop(4.5, 8, 43);
   var capitolHill = new DoughnutShop(2, 4, 37);
   var southLakeUnion = new DoughnutShop(6.33, 9, 23);
@@ -99,4 +93,9 @@
   submitButtonListener.addEventListener('click', createNewLocation, false);
 
   var updateButtonListener = document.getElementById('updateButton');
-  updateButtonListener.addEventListener('click', updateLocationData, false);
+
+
+
+
+
+

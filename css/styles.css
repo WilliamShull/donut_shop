@@ -1,6 +1,96 @@
 body {
-  background-color: #FF6138;
+  font-family: Roboto, Verdana;
+  background-color: #42826c;
+  margin: 0 auto;
+  width: 90%;
+  }
+
+#doughnutsHeader {
+position: fixed;
+top: 0px;
+left: 0px;
+padding: 5px;
+margin: 0px;
+width: 100%;
 }
-article {
-  background-color: #00A388;
+
+.nestedArticle {
+  overflow: auto;
+  margin-top: 110px;
 }
+
+.bodySection, table {
+  color: #002f32;
+  background: #a5c77f;
+  border: 5px solid #002f32;
+  border-radius: 10px;
+  padding: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  -moz-box-shadow: 5px 5px 10px #000000;
+  -webkit-box-shadow: 5px 5px 10px #000000;
+  box-shadow: 5px 5px 10px #000000;
+}
+
+.inputSection, .descriptionSection, .factsSection, table {
+  width: 45%;
+  float: left;
+  margin: 1%;
+}
+
+.descriptionSection {
+  margin-right: 0%;
+}
+
+.inputBox {
+  border: 2px solid #a5c77f;
+  border-radius: 7px;
+}
+
+table {
+  padding: 5px;
+  position: relative;
+  left: 10%;
+}
+
+p {
+  color: #002f32;
+  text-align: left;
+  }
+
+h1 {
+  text-align: center;
+  color: #002f32;
+  font-size: 50px;
+  font-family: Lobster, Verdana;
+  margin: 10px;
+  text-shadow: 2px 2px 5px #000000;
+}
+
+tr:nth-child(odd) {
+  background: #42826c;
+}
+
+.inputBox:hover {
+  border: 2px solid #c84661;
+}
+
+th {
+  border-bottom: 1px solid #000000;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #c84661;
+}
+
+
+
+
+
+
+
+
+
+
