@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -10,30 +11,38 @@
     <link href="css/styles.css" type="text/css" rel="stylesheet" />
   </head>
   <body id="bodyId">
-    <article class="mainArticle">
-    <header id="doughnutsHeader" class="bodySection">
-    <h1>Top Pot Doughnut Forecast</h1>
+    <header>
+      <h1>Top Pot doughnut forecast</h1>
     </header>
-    <article class="nestedArticle">
-      <section id="inputs" class="bodySection inputSection">
-        <h3>Add a new location</h3>
-        <label><input class="inputBox" type="text" id="locationInput" value="" placeholder="location name" /></label>
-        <label><input class="inputBox" type="text" id="minInput" value="" placeholder="min customers" /></label>
-        <label><input class="inputBox" type="text" id="maxInput" value="" placeholder="max customers" /></label>
-        <label><input class="inputBox" type="text" id="avgInput" value="" placeholder="average" /></label>
-        <input class="inputButton"type="button" id="submitButton" value="Add" /><br /><br />
-        <h3>Update a location</h3>
-        <label><input class="inputBox" type="text" id="locationUpdate" value="" placeholder="location update" /></label>
-        <input class="inputButton" type="button" id="updateButton" value="update" /><br />
+    <article>
+      <section class="bodySection leftSection">
+        <div class="sideContent inputContainer">
+          <h3>Add a new location</h3>
+          <input class="inputBox" type="text" id="locationInput" value="" placeholder="location name" />
+          <input class="inputBox" type="text" id="minInput" value="" placeholder="min customers" />
+          <input class="inputBox" type="text" id="maxInput" value="" placeholder="max customers" />
+          <input class="inputBox" type="text" id="avgInput" value="" placeholder="average" />
+          <input class="inputButton"type="button" id="submitButton" value="Add"  /><br />
+          <h3>Update a location</h3>
+          <input class="inputBox" type="text" id="locationUpdate" value="" placeholder="location update" />
+          <input class="inputButton" type="button" id="updateButton" value="update" /><br />
+        </div>
+        <div class="sideContent descriptionContainer">
+          <p>This table represents the amount of doughnuts sold at Top Pot locations between the hours of 7am to 6pm. All customer data is randomly generated.</p>
+          <p>Inputs for each location include:</p>
+          <ul>
+            <li>Top Pot location name.</li>
+            <li>Minimum customers per hour</li>
+            <li>Maximum customers per hour</li>
+            <li>Average number of doughnuts perchased per customer</li>
+          </ul>
+        </div>
       </section>
-      <section class="bodySection descriptionSection">
-        <p>This table represents the amount of doughnuts sold at Top Pot locations between the hours of 7am to 6pm. All customer data is randomly generated.</p>
-        <p>Inputs for each location include: minimum customers per hour, maximum customers per hour, average number of doughnuts perchased per customer, and the Top Pot location name.</p><br />
-      </section>
-    </article>
+      <section class="bodySection rightSection">
         <table id="doughnutTable">
         </table>
+      </section>
     </article>
-    <script type="text/javascript" src="doughnutShop.js"></script>
+  <script type="text/javascript" src="doughnutShop.js"></script>
   </body>
 </html>

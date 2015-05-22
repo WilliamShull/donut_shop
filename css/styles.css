@@ -2,70 +2,61 @@ body {
   font-family: Roboto, Verdana;
   background-color: #42826c;
   margin: 0 auto;
-  width: 90%;
-  }
-
-#doughnutsHeader {
-position: fixed;
-top: 0px;
-left: 0px;
-padding: 5px;
-margin: 0px;
-width: 100%;
+  width: 99%;
 }
 
-.nestedArticle {
+header {
+  width: 99%;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  left: 2px;
+  padding: 5px
+  margin: 0px;
+  z-index: 50;
+}
+
+header>h1 {
+  font-family: Lobster, Verdana;
+  color: #002f32;
+  font-size: 300%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+article {
   overflow: auto;
-  margin-top: 110px;
+  width: 100%;
+  margin-top: 100px;
 }
 
-.bodySection, table {
+.inputContainer, .descriptionContainer, table, header {
   color: #002f32;
   background: #a5c77f;
   border: 5px solid #002f32;
   border-radius: 10px;
-  padding: 5px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 10px;
-  -moz-box-shadow: 5px 5px 10px #000000;
-  -webkit-box-shadow: 5px 5px 10px #000000;
-  box-shadow: 5px 5px 10px #000000;
 }
 
-.inputSection, .descriptionSection, .factsSection, table {
-  width: 45%;
-  float: left;
+.inputContainer, .descriptionContainer {
+  padding: 5px;
+  margin: 10px;
+}
+
+section.leftSection {
+  position: fixed;
+  width: 35%;
   margin: 1%;
 }
 
-.descriptionSection {
-  margin-right: 0%;
-}
-
-.inputBox {
-  border: 2px solid #a5c77f;
-  border-radius: 7px;
+section.rightSection {
+  width: 50%;
+  position: absolute;
+  top: 128px;
+  right: 185px;
 }
 
 table {
-  padding: 5px;
-  position: relative;
-  left: 10%;
-}
-
-p {
-  color: #002f32;
-  text-align: left;
-  }
-
-h1 {
-  text-align: center;
-  color: #002f32;
-  font-size: 50px;
-  font-family: Lobster, Verdana;
-  margin: 10px;
-  text-shadow: 2px 2px 5px #000000;
+  padding: 10px;
 }
 
 tr:nth-child(odd) {
@@ -79,18 +70,9 @@ tr:nth-child(odd) {
 th {
   border-bottom: 1px solid #000000;
   text-align: center;
+  font-weight: 700;
 }
 
 tr:hover {
   background-color: #c84661;
 }
-
-
-
-
-
-
-
-
-
-

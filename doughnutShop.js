@@ -60,7 +60,7 @@
       tblhead.appendChild(tableH);
     }
 
-    body.appendChild(table);
+    //body.appendChild(table);
     table.appendChild(tblhead);
     table.appendChild(tblBody);
     tblhead.setAttribute("align", "right");
