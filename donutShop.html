@@ -1,117 +1,48 @@
 <!DOCTYPE html>
+
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Top Pot doughnut production forcasting</title>
+    <title>Top Pot doughnut production forecasting</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
   </head>
   <body id="bodyId">
-    <label><input type="text" id="locationInput" value="" />New location name</label><br />
-    <label><input type="number" id="minInput" value="" />Minimum customers per hour</label><br />
-    <label><input type="number" id="maxInput" value="" />Maximum customers per hour</label><br />
-    <label><input type="number" id="avgInput" value="" />Average doughnuts perchased per customer</label><br />
-    <input type="button" id="submitButton" value="Add" />
-    <table id="doughnutTable">
-    </table>
-
-
-    <script type="text/javascript">
-      var body = document.getElementById("bodyId");
-      var table = document.getElementById("doughnutTable");
-      var tblBody = document.createElement("tbody");
-      var tblhead = document.createElement("thead");
-
-
-      function DoughnutShop(averageDoughnuts, minCustomersHour, maxCustomersHour) {
-        this.averageDoughnuts = averageDoughnuts;
-        this.minCustomersHour = minCustomersHour;
-        this.maxCustomersHour = maxCustomersHour;
-      }
-
-      DoughnutShop.prototype.generateRandom = function(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      };
-
-      DoughnutShop.prototype.hourlyDoughnuts = function() {
-        var customers = this.generateRandom(this.minCustomersHour, this.maxCustomersHour);
-        return Math.floor(customers * this.averageDoughnuts);
-      };
-
-      DoughnutShop.prototype.dailyDoughnuts = function() {
-        var totalDoughnuts = 0;
-        var doughnutTime = [];
-        var i = 0;
-        for(i=0; i<12; i++) {
-          doughnutTime.push(this.hourlyDoughnuts());
-          totalDoughnuts += doughnutTime[i];
-        }
-        doughnutTime.push(totalDoughnuts);
-        return doughnutTime;
-      };
-
-      DoughnutShop.prototype.render = function(locationName) {
-        var doughnutSales = this.dailyDoughnuts();
-        doughnutSales.unshift(locationName + ":");
-        var row = document.createElement("tr");
-        row.setAttribute("id", locationName);
-
-        for(var j=0; j<doughnutSales.length; j++) {
-          var cell = document.createElement("td");
-          var cellText = document.createTextNode(doughnutSales[j]);
-          cell.appendChild(cellText);
-          row.appendChild(cell);
-        }
-        cell = document.createElement("td");
-        cellText = document.createTextNode(doughnutSales[12]);
-        tblBody.appendChild(row);
-        tblBody.setAttribute("align", "right");
-      }
-
-      var tableInit = function() {
-        var time = ["Location", "7:00am", "8:00am", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm", "6:00pm", "Total"];
-
-        var i = 0;
-        for(i=0; i<time.length; i++) {
-          var tableH = document.createElement("th");
-          var tableHText = document.createTextNode(time[i]);
-          tableH.appendChild(tableHText);
-          tblhead.appendChild(tableH);
-        }
-
-        body.appendChild(table);
-        table.appendChild(tblhead);
-        table.appendChild(tblBody);
-        tblhead.setAttribute("align", "right");
-      }
-
-      var createNewLocation = function(event) {
-        var newLocationName = document.getElementById('locationInput').value;
-        var newMin = parseInt(document.getElementById('minInput').value);
-        var newMax = parseInt(document.getElementById('maxInput').value);
-        var newAvg = parseInt(document.getElementById('avgInput').value);
-        var newLocation = new DoughnutShop(newAvg, newMin, newMax);
-
-        newLocation.render(newLocationName);
-      }
-
-      var downtown = new DoughnutShop(4.5, 8, 43);
-      var capitolHill = new DoughnutShop(2, 4, 37);
-      var southLakeUnion = new DoughnutShop(6.33, 9, 23);
-      var wedgewood = new DoughnutShop(1.25, 2, 28);
-      var ballard = new DoughnutShop(3.75, 8, 58);
-
-      tableInit();
-      downtown.render("downtown");
-      capitolHill.render("capitolHill");
-      southLakeUnion.render("southLakeUnion");
-      wedgewood.render("wedgewood");
-      ballard.render("ballard");
-
-      var button = document.getElementById('submitButton');
-      button.addEventListener('click', createNewLocation, false);
-
-
-    </script>
+    <header>
+      <h1>Top Pot doughnut forecast</h1>
+    </header>
+    <article>
+      <section class="bodySection leftSection">
+        <div class="sideContent inputContainer">
+          <h3>Add a new location</h3>
+          <input class="inputBox" type="text" id="locationInput" value="" placeholder="location name" />
+          <input class="inputBox" type="text" id="minInput" value="" placeholder="min customers" />
+          <input class="inputBox" type="text" id="maxInput" value="" placeholder="max customers" />
+          <input class="inputBox" type="text" id="avgInput" value="" placeholder="average" />
+          <input class="inputButton"type="button" id="submitButton" value="Add"  /><br />
+          <h3>Update a location</h3>
+          <input class="inputBox" type="text" id="locationUpdate" value="" placeholder="location update" />
+          <input class="inputButton" type="button" id="updateButton" value="update" /><br />
+        </div>
+        <div class="sideContent descriptionContainer">
+          <p>This table represents the amount of doughnuts sold at Top Pot locations between the hours of 7am to 6pm. All customer data is randomly generated.</p>
+          <p>Inputs for each location include:</p>
+          <ul>
+            <li>Top Pot location name.</li>
+            <li>Minimum customers per hour</li>
+            <li>Maximum customers per hour</li>
+            <li>Average number of doughnuts perchased per customer</li>
+          </ul>
+        </div>
+      </section>
+      <section class="bodySection rightSection">
+        <table id="doughnutTable">
+        </table>
+      </section>
+    </article>
+  <script type="text/javascript" src="doughnutShop.js"></script>
   </body>
 </html>

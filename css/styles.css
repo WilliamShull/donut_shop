@@ -1,0 +1,78 @@
+body {
+  font-family: Roboto, Verdana;
+  background-color: #42826c;
+  margin: 0 auto;
+  width: 99%;
+}
+
+header {
+  width: 99%;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  left: 2px;
+  padding: 5px
+  margin: 0px;
+  z-index: 50;
+}
+
+header>h1 {
+  font-family: Lobster, Verdana;
+  color: #002f32;
+  font-size: 300%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+article {
+  overflow: auto;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.inputContainer, .descriptionContainer, table, header {
+  color: #002f32;
+  background: #a5c77f;
+  border: 5px solid #002f32;
+  border-radius: 10px;
+}
+
+.inputContainer, .descriptionContainer {
+  padding: 5px;
+  margin: 10px;
+}
+
+section.leftSection {
+  position: fixed;
+  width: 35%;
+  margin: 1%;
+}
+
+section.rightSection {
+  width: 50%;
+  position: absolute;
+  top: 128px;
+  right: 185px;
+}
+
+table {
+  padding: 10px;
+}
+
+tr:nth-child(odd) {
+  background: #42826c;
+}
+
+.inputBox:hover {
+  border: 2px solid #c84661;
+}
+
+th {
+  border-bottom: 1px solid #000000;
+  text-align: center;
+  font-weight: 700;
+}
+
+tr:hover {
+  background-color: #c84661;
+}
