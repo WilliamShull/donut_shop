@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+
 
 <html>
   <head>
@@ -18,14 +20,14 @@
       <section class="bodySection leftSection">
         <div class="sideContent inputContainer">
           <h3>Add a new location</h3>
-          <input class="inputBox" type="text" id="locationInput" value="" placeholder="location name" />
-          <input class="inputBox" type="text" id="minInput" value="" placeholder="min customers" />
-          <input class="inputBox" type="text" id="maxInput" value="" placeholder="max customers" />
-          <input class="inputBox" type="text" id="avgInput" value="" placeholder="average" />
+          <input class="inputBox" type="text" id="locationInput" value="" placeholder="location name" /><br />
+          <input class="inputBox" type="text" id="minInput" value="" placeholder="min customers" /><br />
+          <input class="inputBox" type="text" id="maxInput" value="" placeholder="max customers" /><br />
+          <input class="inputBox" type="text" id="avgInput" value="" placeholder="average" /><br />
           <input class="inputButton"type="button" id="submitButton" value="Add"  /><br />
           <h3>Update a location</h3>
-          <input class="inputBox" type="text" id="locationUpdate" value="" placeholder="location update" />
-          <input class="inputButton" type="button" id="updateButton" value="update" /><br />
+          <input id="locationUpdateBox" class="inputBox updateElement" type="text" id="locationUpdate" value="" placeholder="location update" />
+          <input id="locationUpdateButton" class="inputButton updateElement" type="button" id="updateButton" value="update" /><br />
         </div>
         <div class="sideContent descriptionContainer">
           <p>This table represents the amount of doughnuts sold at Top Pot locations between the hours of 7am to 6pm. All customer data is randomly generated.</p>
@@ -43,6 +45,7 @@
         </table>
       </section>
     </article>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="doughnutShop.js"></script>
   </body>
 </html>
