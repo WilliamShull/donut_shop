@@ -7,6 +7,11 @@
     <title>Top Pot doughnut production forcasting</title>
   </head>
   <body id="bodyId">
+    <label><input type="text" id="locationInput" value="" />New location name</label><br />
+    <label><input type="number" id="minInput" value="" />Minimum customers per hour</label><br />
+    <label><input type="number" id="maxInput" value="" />Maximum customers per hour</label><br />
+    <label><input type="number" id="avgInput" value="" />Average doughnuts perchased per customer</label><br />
+    <input type="button" id="submitButton" value="Add" />
     <table id="doughnutTable">
     </table>
 
@@ -46,7 +51,7 @@
       };
 
       DoughnutShop.prototype.render = function(locationName) {
-        doughnutSales = this.dailyDoughnuts();
+        var doughnutSales = this.dailyDoughnuts();
         doughnutSales.unshift(locationName + ":");
         var row = document.createElement("tr");
         row.setAttribute("id", locationName);
@@ -80,6 +85,15 @@
         tblhead.setAttribute("align", "right");
       }
 
+      var createNewLocation = function(event) {
+        var newLocationName = document.getElementById('locationInput').value;
+        var newMin = parseInt(document.getElementById('minInput').value);
+        var newMax = parseInt(document.getElementById('maxInput').value);
+        var newAvg = parseInt(document.getElementById('avgInput').value);
+        var newLocation = new DoughnutShop(newAvg, newMin, newMax);
+
+        newLocation.render(newLocationName);
+      }
 
       var downtown = new DoughnutShop(4.5, 8, 43);
       var capitolHill = new DoughnutShop(2, 4, 37);
@@ -93,6 +107,9 @@
       southLakeUnion.render("southLakeUnion");
       wedgewood.render("wedgewood");
       ballard.render("ballard");
+
+      var button = document.getElementById('submitButton');
+      button.addEventListener('click', createNewLocation, false);
 
 
     </script>
