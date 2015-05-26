@@ -1,7 +1,7 @@
-  var body = $("#bodyId");
-  var table = $("#doughnutTable");
-  var tblBody = $('<tbody>');
-  var tblhead = $('<thead>');
+  var body = document.getElementById("bodyId");
+  var table = document.getElementById("doughnutTable");
+  var tblBody = document.createElement("tbody");
+  var tblhead = document.createElement("thead");
 
 
   function DoughnutShop(averageDoughnuts, minCustomersHour, maxCustomersHour) {
